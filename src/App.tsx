@@ -1,21 +1,12 @@
 import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { Layout } from "./components/Layout";
 
 export const App = defineComponent({
-  setup() {
-    const msg = 'hello vue3 tsx'
-    return () => (
+  render() {
+    return (
       <>
-        <HelloWorld msg={msg} />
+        <Layout />
       </>
     )
   }
-  // render() {
-  //   return (
-  //     <>
-  //       <img alt="Vue logo" src="./assets/logo.png" />
-  //       <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  //     </>
-  //   )
-  // }
 })
