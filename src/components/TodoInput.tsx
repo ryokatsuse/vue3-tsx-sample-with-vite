@@ -11,6 +11,8 @@ export default defineComponent({
   },
   setup(props) {
     const title = ref('');
+    const isCompleted = ref(false)
+    const submitButtonRef = ref<HTMLButtonElement>();
 
     const handeleTitleChange = (event: Event) => {
       if (event.target instanceof HTMLInputElement) {
@@ -18,11 +20,12 @@ export default defineComponent({
       }
     }
 
-    const handleSubmit =() => {
-      props.submitTodo({ title:title.value })
+    const handleSubmit = () => {
+      props.submitTodo({ title: title.value, isCompleted: isCompleted.value })
       title.value = ''
-      
+      isCompleted.value = false
     }
+
     return () => (
       <div class="todo-input">
         <div class="todo-field">
@@ -32,7 +35,7 @@ export default defineComponent({
           </div>
         </div>
         <div class="todo-field-button">
-          <button onClick={handleSubmit}>登録</button>
+          <button disabled={false} ref={submitButtonRef} onClick={handleSubmit}>登録</button>
         </div>
       </div>
     );

@@ -9,7 +9,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-
     const handeleIsCompletedChange = () => {
       if (props.todo.isCompleted === false) {
         props.todo.isCompleted = true
@@ -20,12 +19,14 @@ export default defineComponent({
     return () => (
       <div class="todo">
         <div class="todo-user">
-          <input 
-            type="checkBox"
-            value={props.todo.isCompleted}
-            onClick={handeleIsCompletedChange}
-            />
-          <span>{props.todo.title}</span>
+          <label>
+            <input 
+              type="checkBox"
+              value={props.todo.isCompleted}
+              onClick={handeleIsCompletedChange}
+              />
+            <span>{props.todo.title}</span>
+          </label>
         </div> 
       </div>
     );
