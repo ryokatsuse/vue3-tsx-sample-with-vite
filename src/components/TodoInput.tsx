@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue';
+import { defineComponent, PropType, ref } from 'vue';
 
 export default defineComponent({
   name: 'TodoInput',
@@ -7,7 +7,7 @@ export default defineComponent({
     submitTodo:{
       type: Function,
       required:true
-    }
+    } as const
   },
   setup(props) {
     const title = ref('');

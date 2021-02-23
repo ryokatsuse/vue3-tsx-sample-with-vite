@@ -6,7 +6,7 @@ export default defineComponent({
     todo: {
       type: Object,
       required: true,
-    },
+    } as const,
   },
   setup(props) {
     const handeleIsCompletedChange = () => {
